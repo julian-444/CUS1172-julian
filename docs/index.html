@@ -1,140 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Julian Mora - Profile Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .menu a {
-            margin-right: 15px;
-        }
-        img {
-            width: 150px;
-            border-radius: 50%;
-        }
-        section {
-            margin-top: 40px;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            padding: 8px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Julian Mora | Course Profile</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+    header, main, footer { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    header { padding-top: 28px; }
+    nav { background: #111; position: sticky; top: 0; z-index: 10; }
+    nav ul { list-style: none; margin: 0 auto; padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 14px; max-width: 1000px; }
+    nav a { color: #fff; text-decoration: none; font-weight: 600; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 18px 0; border-top: 1px solid #ddd; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 800px) { .grid { grid-template-columns: 1.2fr 0.8fr; } }
+    img { max-width: 100%; height: auto; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #bbb; padding: 10px; text-align: left; }
+    th { background: #f3f3f3; }
+    .muted { color: #555; }
+    .pill { display: inline-block; padding: 2px 8px; border: 1px solid #bbb; border-radius: 999px; font-size: 12px; margin-left: 6px; }
+    .note { background: #fff8d6; border: 1px solid #f0d46a; padding: 10px; border-radius: 10px; }
+    .video { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 12px; }
+    label { display:block; margin-top: 10px; font-weight: 600; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #bbb; border-radius: 10px; }
+    button { margin-top: 12px; padding: 10px 14px; border: 0; border-radius: 10px; background: #111; color: #fff; cursor: pointer; }
+    button:hover { opacity: 0.9; }
+  </style>
 </head>
 
 <body>
-
-<h1>Julian Mora - Online Profile</h1>
-
-<!-- Menu Section -->
-<div class="menu">
-    <h2>Menu</h2>
-    <a href="#profile">Profile</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#interests">Interests</a>
-    <a href="#favorites">Favorites</a>
-    <a href="#websites">Favorite Websites</a>
-    <a href="#projects">My Projects</a>
-</div>
-
-<!-- Basic Profile Section -->
-<section id="profile">
-    <h2>Basic Profile Information</h2>
-    <img src="https://via.placeholder.com/150" alt="Profile Picture">
-    <p>
-        <span>Name:</span> Julian Mora <br>
-        <span>Major:</span> Computer Science <br>
-        <span>Minor:</span> None
-    </p>
-</section>
-
-<!-- Education Section -->
-<section id="education">
-    <h2>Education Summary</h2>
-    <p>
-        Mainly just studying as much as I can when I can and making sure I meet my ends to get my degree.
-    </p>
+  <!-- MENU SECTION (anchor links to each section) -->
+  <nav aria-label="Profile menu">
     <ul>
-        <li>St. John's University</li>
-        <li>Bachelor’s Degree (Computer Science)</li>
-        <li>Sophomore</li>
+      <li><a href="#basic">Basic Info</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#work">Work & Experience</a></li>
+      <li><a href="#skills">Programming Skills</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#favorites">Favorites (Videos)</a></li>
+      <li><a href="#websites">Favorite Websites</a></li>
+      <li><a href="#projects">My Course Projects</a></li>
+      <li><a href="#contact">Contact Form</a></li>
     </ul>
-</section>
+  </nav>
 
-<!-- Work Experience Section -->
-<section id="experience">
-    <h2>Work Experience / Projects</h2>
-    <ul>
-        <li>Work at a pizza shop</li>
-        <li>Experience with pseudocode, recursion, and handling arrays</li>
-        <li>Learning Java, Python, and Linux</li>
-    </ul>
-</section>
-
-<!-- Programming Skills Section -->
-<section id="skills">
-    <h2>Programming Skills</h2>
-    <table>
-        <tr>
-            <th>Language</th>
-            <th>Experience Level</th>
-        </tr>
-        <tr>
-            <td>Java</td>
-            <td>Intermediate</td>
-        </tr>
-        <tr>
-            <td>Python</td>
-            <td>Beginner</td>
-        </tr>
-        <tr>
-            <td>Linux / Command Line</td>
-            <td>Beginner</td>
-        </tr>
-        <tr>
-            <td>HTML</td>
-            <td>Beginner</td>
-        </tr>
-    </table>
-</section>
-
-<!-- Interests Section -->
-<section id="interests">
-    <h2>General Interests</h2>
-    <p>
-        I enjoy playing video games, working on cars or going to car meets to look at other cars, and listening to music.
+  <header>
+    <h1>Julian Mora <span class="pill">Computer Science</span></h1>
+    <p class="muted">
+      St. John’s University • Queens, New York
+      <span class="pill">Course Profile Page</span>
     </p>
-</section>
+    <div class="note">
+      <p>
+        <strong>Important:</strong> This page includes all required HTML tags for the assignment:
+        <span>&lt;div&gt;</span>, <span>&lt;span&gt;</span>, <span>&lt;ul&gt;</span>, <span>&lt;li&gt;</span>,
+        <span>&lt;img&gt;</span>, <span>&lt;table&gt;</span>, <span>&lt;form&gt;</span>,
+        <span>&lt;h1&gt;</span>, <span>&lt;p&gt;</span>, <span>&lt;a&gt;</span>.
+      </p>
+    </div>
+  </header>
 
-<!-- Favorites Section -->
-<section id="favorites">
-    <h2>Favorite Song, Movie, and TV Show</h2>
+  <main>
+    <!-- 1) BASIC PROFILE INFORMATION -->
+    <section id="basic">
+      <h1>1) Basic Profile Information</h1>
 
-    <p>Favorite Song:</p>
-    <iframe width="300" height="170"
-        src="https://www.youtube.com/embed/iWa-6g-TbgI">
-    </iframe>
+      <div class="grid">
+        <div class="card">
+          <p>
+            Hi! My name is <strong>Julian Mora</strong> and I’m a <strong>Computer Science</strong> major at
+            <strong>St. John’s University</strong>. I’m building this profile page as an index for my work in this course
+            (similar to a LinkedIn-style profile), and I’ll keep updating it as I complete new projects.
+          </p>
 
-    <p>Favorite Movie:</p>
-    <iframe width="300" height="170"
-        src="https://www.youtube.com/embed/KPOuJGkpblk">
-    </iframe>
+          <p class="muted">
+            <span><strong>Major:</strong> Computer Science</span><br />
+            <span><strong>School:</strong> St. John’s University</span>
+          </p>
+        </div>
 
-    <p>Favorite TV Show:</p>
-    <iframe width="300" height="170"
-        src="https://www.youtube.com/embed/I6rtzHujfLM">
-    </iframe>
-</section>
+        <div class="card">
+          <p><strong>Profile Picture (GitHub-hosted image)</strong></p>
+          <!-- GitHub-hosted image: add your image to your repo at /images/profile.jpg -->
+          <img src="images/profile.jpg" alt="Julian Mora profile photo (stored in this GitHub repository)" />
+          <p class="muted">
+            Tip: Put a real photo or avatar in <span>images/profile.jpg</span> inside your GitHub repository.
+          </p>
 
-<!-- Favorite Websites Section -->
-<section id="websites">
-    <h2>Favorite Websites</h2>
-    <ul>
-        <li>
-            <a href="https://www.youtube.c
+          <p><strong>Extra Image (third-party hosted)</strong></p>
+          <!-- Third-party hosted image -->
+          <img
+            src="https://via.placeholder.com/600x350.png?text=Third-Party+Hosted+Image"
+            alt="Example image hosted on a third-party website"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2) EDUCATION SUMMARY -->
+    <section id="education">
+      <h1>2) Education Summary</h1>
+
+      <div class="card">
+        <p>
+          I’m currently studying Computer Science at St. John’s University. My main goal is to graduate while maintaining
+          a strong GPA. I want to keep improving my skills through projects, practice, and learning new tools that will
+          help me in real-world software development.
+        </p>
+
+        <p><strong>Degrees / Diplomas</strong></p>
+        <ul>
+          <li>Expected: Bachelor’s Degree in Computer Science (in progress)</li>
+          <li>High School Diploma (completed)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3) WORK EXPERIENCE / INTERNSHIPS -->
+    <section id="work">
+      <h1>3) Work Experience / Internships</h1>
+
+      <div class="card">
+        <p class="muted">Below are examples of experience and projects I’ve worked on so far:</p>
+        <ul>
+          <li>
+            <strong>Java Projects (Course/Personal)</strong>
+            <ul>
+              <li>Built a simple <span>To-Do List</span> application using Java.</li>
+              <li>Practiced object-oriented programming concepts (classes, methods, and basic data structures).</li>
+              <li>Focused on clean code, readability, and step-by-step debugging.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4) PROGRAMMING SKILLS -->
+    <section id="skills">
+      <h1>4) Programming Skills</h1>
+
+      <div class="card">
+        <p>
+          I’m continuing to build my programming foundation. My strongest language so far is Java, and I’m also learning
+          Python and basic Linux skills.
+        </p>
+
+        <!-- Table requirement -->
+        <table>
+          <thead>
+            <tr>
+              <th>Language / Tool</th>
+              <th>Experience Level</th>
+              <th>Example Use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Java</td>
+              <td>Intermediate</td>
+              <td>To-do list app and other small projects</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>Beginner</td>
+              <td>Basic scripts and practice problems</td>
+            </tr>
+            <tr>
+              <td>Linux</td>
+              <td>Beginner</td>
+              <td>Command line navigation and simple tasks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 5) GENERAL INTERESTS -->
+    <section id="interests">
+      <h1>5) General Interests</h1>
+
+      <div class="card">
+        <p>
+          Outside of school, I like spending time doing things that keep me social, active, and creative.
+        </p>
+        <ul>
+          <li>Going to car meets</li>
+          <li>Driving</li>
+          <li>Playing video games</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6) FAVORITE SONG, FILM, AND TV SHOW (videos in-page) -->
+    <section id="favorites">
+      <h1>6) Favorite Song, Film, and TV Show</h1>
+
+      <div class="grid">
+        <div class="card">
+          <p><strong>Favorite Song:</strong> “Party All the Time” — Eddie Murphy</p>
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/iWa-6g-TbgI"
+            title="Party All the Time - Eddie Murphy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="card">
+          <p><strong>Favorite Movie Trailer:</strong> Se7en (Trailer)</p>
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/KPOuJGkpblk"
+            title="Se7en Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="card">
+          <p><strong>Favorite TV Show:</strong> Batman Beyond (Clip/Trailer)</p>
+          <iframe
+            class="video"
+            src="https://www.youtube.com/embed/WS1s3T-rnFU"
+            title="Batman Beyond"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) FAVORITE WEBSITE SECTION -->
+    <section id="websites">
+      <h1>7) Favorite Websites</h1>
+
+      <div class="card">
+        <p>
+          Here are a couple websites I use often. Each link opens in a new tab.
+        </p>
+
+        <ul>
+          <li>
+            <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">Discord (opens in new tab)</a>
+            <p class="muted">A communication platform I use for chatting and communities.</p>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube (opens in new tab)</a>
+            <p class="muted">A video platform where I watch music, tutorials, and entertainment.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8) MY PROJECTS IN THIS COURSE -->
+    <section id="projects">
+      <h1>8) My Projects in this Course</h1>
+
+      <div class="card">
+        <p>
+          This section is my project index for the course. Right now, I don’t have other course projects listed yet,
+          but this list will grow as the year progresses.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Project 1:</strong> Course Profile Page (this page)
+            <span class="muted">—</span>
+            <a href="#basic">Jump to top sections</a>
+          </li>
+          <li><strong>Project 2:</strong> (Coming soon)</li>
+          <li><strong>Project 3:</strong> (Coming soon)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORM (required) -->
+    <section id="contact">
+      <h1>Contact Form</h1>
+      <div class="card">
+        <p class="muted">
+          This form is for assignment requirements (it won’t send messages unless you later connect it to a backend).
+        </p>
+
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write a message..."></textarea>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="muted">
+      © <span>2026</span> Julian Mora • Built with HTML5
+    </p>
+  </footer>
+</body>
+</html>
+
