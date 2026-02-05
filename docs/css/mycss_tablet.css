@@ -1,1 +1,49 @@
+/* mycss_tablet.css - tablet/smaller screen styling */
+body{
+  font-size: 16px;
+}
+
+.menu{
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.menu a{
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.container{
+  padding: 16px;
+}
+
+.grid{
+  grid-template-columns: 1fr;
+}
+
+.video-grid{
+  grid-template-columns: 1fr;
+}
+
+.card{
+  border-radius: 16px;
+  padding: 14px;
+}
+
+h1{
+  font-size: 22px;
+}
+
+table, th, td{
+  font-size: 14px;
+}
+
+img{
+  border-radius: 16px;
+}
+
+button{
+  width: 100%;
+  padding: 12px 14px;
+}
 
