@@ -1,1 +1,222 @@
+/* mycss_web.css - desktop/web styling */
+:root{
+  --bg: #0b1020;
+  --surface: rgba(255,255,255,0.08);
+  --surface2: rgba(255,255,255,0.12);
+  --text: #f5f7ff;
+  --muted: rgba(245,247,255,0.75);
+  --line: rgba(255,255,255,0.18);
+  --accent: #7aa7ff;
+  --accent2: #9bffd6;
+}
+
+/* TAG SELECTORS (requirement #6 + #7) */
+html { scroll-behavior: smooth; } /* extra feature */
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 10% 10%, rgba(122,167,255,0.35), transparent 55%),
+              radial-gradient(900px 600px at 90% 20%, rgba(155,255,214,0.20), transparent 55%),
+              var(--bg);
+}
+
+h1{
+  margin: 0 0 10px;
+  letter-spacing: 0.2px;
+}
+p{ margin: 10px 0; }
+a{
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover{ text-decoration: underline; }
+span{ color: inherit; }
+div{ box-sizing: border-box; }
+ul{ padding-left: 20px; }
+li{ margin: 6px 0; }
+
+img{
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+}
+th, td{
+  border: 1px solid var(--line);
+  padding: 12px;
+  text-align: left;
+}
+th{
+  background: rgba(255,255,255,0.10);
+}
+
+/* FORM TAG + FORM ELEMENTS */
+form{
+  display: grid;
+  gap: 12px;
+}
+label{ font-weight: 700; }
+input, textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  outline: none;
+}
+input::placeholder, textarea::placeholder{ color: rgba(245,247,255,0.55); }
+button{
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(122,167,255,0.45);
+  background: rgba(122,167,255,0.18);
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+}
+button:hover{
+  background: rgba(122,167,255,0.26);
+}
+
+/* ACCESSIBILITY FEATURE not always taught early: :focus-visible */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline: 3px solid rgba(155,255,214,0.55);
+  outline-offset: 3px;
+}
+
+/* ID SELECTOR (requirement #6) */
+#topMenu{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px); /* extra feature */
+  background: rgba(8,12,24,0.70);
+  border-bottom: 1px solid var(--line);
+}
+
+/* CLASS SELECTORS (requirement #6) */
+.container{
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  max-width: 1050px;
+}
+.menu li{ margin: 0; }
+.menu a{
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+.menu a:hover{
+  border-color: rgba(122,167,255,0.35);
+  background: rgba(122,167,255,0.10);
+}
+
+.section{
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.note{
+  background: rgba(255, 248, 214, 0.12);
+  border: 1px solid rgba(240, 212, 106, 0.40);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+
+.muted{ color: var(--muted); }
+
+.badge{
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(155,255,214,0.12);
+  border: 1px solid rgba(155,255,214,0.35);
+  font-size: 12px;
+}
+
+.list{
+  margin: 10px 0 0;
+}
+
+.profile-img{
+  max-width: 100%;
+  height: auto;
+}
+
+.thirdparty-img{
+  margin-top: 10px;
+}
+
+.video-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.video{
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.footer{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  opacity: 0.95;
+}
+
+/* PRINT RESPONSIVE DESIGN (requirement #9) */
+@media print{
+  body{
+    background: white !important;
+    color: black !important;
+  }
+  #topMenu{ display: none !important; }
+  .card{
+    box-shadow: none !important;
+    background: white !important;
+    border: 1px solid #777 !important;
+  }
+  a{
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  .video{ display: none !important; } /* videos don't print well */
+}
 
